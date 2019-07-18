@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -6,11 +6,11 @@ import { Observable } from 'rxjs';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'rxjs';
-
-  constructor() {
-    const observable$ = Observable.create((observer) => {
+  observable$;
+  ngOnInit() {
+    this.observable$ = Observable.create((observer) => {
       observer.next(1);
       observer.next(2);
       observer.next(3);
@@ -21,11 +21,15 @@ export class AppComponent {
     });
     
     console.log('just before subscribe');
-    observable$.subscribe({
+    this.observable$.subscribe({
       next: x => console.log('got value ' + x),
       error: err => console.error('something wrong occurred: ' + err),
       complete: () => console.log('done'),
     });
     console.log('just after subscribe');
+  }
+
+  ngOnDestory(){
+    this.observable$.unsubscribe();
   }
 }

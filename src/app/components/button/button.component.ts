@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { fromEvent } from 'rxjs';
 @Component({
   selector: 'app-button',
   templateUrl: './button.component.html',
@@ -10,6 +10,8 @@ export class ButtonComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    const clicks = fromEvent(document, 'click');
+    clicks.subscribe(x => console.log(x));
   }
 
 }

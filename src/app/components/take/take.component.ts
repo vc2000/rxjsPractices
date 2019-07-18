@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { interval } from 'rxjs';
+import { take } from 'rxjs/operators';
+// import 'rxjs/add/operator/';
+
 
 @Component({
   selector: 'app-take',
@@ -10,6 +14,13 @@ export class TakeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    const intervalCount = interval(1000);
+    const takeFive = intervalCount.pipe(take(5));
+    takeFive.subscribe(x => console.log(x));
+  }
+
+  ngOnDestroy() {
+
   }
 
 }

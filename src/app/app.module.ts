@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { SubjectComponent } from './components/subject/subject.component';
 import { TakeComponent } from './components/take/take.component';
 import { ManystreamsComponent } from './components/manystreams/manystreams.component';
+import { ButtonComponent } from './components/button/button.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SubjectComponent,
     TakeComponent,
-    ManystreamsComponent
+    ManystreamsComponent,
+    ButtonComponent
   ],
   imports: [
     BrowserModule,

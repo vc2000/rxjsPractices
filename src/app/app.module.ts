@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SubjectComponent } from './components/subject/subject.component';
 import { TakeComponent } from './components/take/take.component';
+import { ManystreamsComponent } from './components/manystreams/manystreams.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SubjectComponent,
-    TakeComponent
+    TakeComponent,
+    ManystreamsComponent
   ],
   imports: [
     BrowserModule,

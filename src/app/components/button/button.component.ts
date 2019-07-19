@@ -12,7 +12,7 @@ export class ButtonComponent implements AfterViewInit{
   ) { }
 
   ngAfterViewInit() {
-
+    // getElementById
     const button = document.querySelector('button');
     const clicks = fromEvent(button, 'click');
     clicks.subscribe(x => console.log(x));

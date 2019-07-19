@@ -1,16 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, AfterViewInit  } from '@angular/core';
 import { fromEvent } from 'rxjs';
 @Component({
   selector: 'app-button',
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss']
 })
-export class ButtonComponent implements OnInit {
+export class ButtonComponent implements AfterViewInit{
+  
+  constructor(
+    
+  ) { }
 
-  constructor() { }
+  ngAfterViewInit() {
 
-  ngOnInit() {
-    const clicks = fromEvent(document, 'click');
+    const button = document.querySelector('button');
+    const clicks = fromEvent(button, 'click');
     clicks.subscribe(x => console.log(x));
   }
 
